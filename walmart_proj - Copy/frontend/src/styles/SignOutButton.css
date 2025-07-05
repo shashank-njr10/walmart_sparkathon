@@ -1,0 +1,78 @@
+.signout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+}
+
+.signout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+}
+
+.signout-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+.signout-button .icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.signout-button:hover .icon {
+  transform: translateX(2px);
+}
+
+.signout-button .text {
+  transition: opacity 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signout-button {
+    top: 15px;
+    right: 15px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .signout-button .text {
+    display: none;
+  }
+
+  .signout-button .icon {
+    font-size: 18px;
+  }
+}
+
+/* Animation for button appearance */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.signout-button {
+  animation: slideInFromRight 0.5s ease-out;
+}
