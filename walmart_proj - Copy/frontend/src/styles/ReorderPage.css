@@ -1,0 +1,110 @@
+.reorder-container {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px 24px;
+  background: #f8fef9;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #1a1a1a;
+}
+
+.reorder-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #24713f;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reorder-container p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #144e2a;
+  font-size: 15px;
+}
+
+.reorder-input,
+.reorder-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1.5px solid #bdeacb;
+  background-color: #f1fdf5;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.reorder-input:focus,
+.reorder-select:focus {
+  outline: none;
+  border-color: #45a06e;
+  box-shadow: 0 0 0 2px rgba(67, 160, 71, 0.2);
+}
+
+.reorder-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.reorder-buttons button {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.reorder-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reorder-buttons button:not(.cancel-btn) {
+  background: linear-gradient(to right, #43a047, #388e3c);
+  color: white;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.25);
+}
+
+.reorder-buttons button:not(.cancel-btn):hover {
+  background: linear-gradient(to right, #3c9241, #2e7d32);
+}
+
+.cancel-btn {
+  background-color: #ef5350;
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 83, 80, 0.25);
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+.no-options {
+  font-size: 14px;
+  color: #777;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+/* Add subtle input icon spacing if you use icons inside labels */
+.form-group label svg {
+  margin-right: 4px;
+  vertical-align: middle;
+}

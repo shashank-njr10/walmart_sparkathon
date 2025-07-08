@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Product Grid Demo</title>
+    <style>
+      body {
+        background: #f6f8fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 16px;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 28px;
+      }
+      .product-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+      .product-card:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+      .product-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background: #f6f6f6;
+      }
+      .product-info {
+        padding: 18px 16px 16px 16px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .product-name {
+        font-size: 1.13rem;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        color: #222;
+      }
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .product-price {
+        color: #388e3c;
+        font-weight: 700;
+        font-size: 1.08em;
+      }
+      .sustainability-badge {
+        background: #e8f5e9;
+        color: #388e3c;
+        border-radius: 8px;
+        padding: 2px 8px;
+        font-size: 0.97em;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+      .product-stock {
+        font-size: 0.97em;
+        color: #888;
+        margin-bottom: 12px;
+      }
+      .add-to-cart-btn {
+        background: linear-gradient(90deg, #43a047 60%, #66bb6a 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: auto;
+      }
+      .add-to-cart-btn:hover {
+        background: linear-gradient(90deg, #388e3c 60%, #43a047 100%);
+      }
+      @media (max-width: 600px) {
+        .product-image {
+          height: 120px;
+        }
+        .container {
+          padding: 12px 2px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; color: #222; margin-bottom: 32px">
+        Modern Product Grid Demo
+      </h1>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "Organic Bananas 1kg",
+          price: 45,
+          sustainability: 0.99,
+          stock: 7,
+          image_url:
+            "https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg",
+        },
+        {
+          id: 2,
+          name: "All-Purpose Flour 1kg",
+          price: 50,
+          sustainability: 0.95,
+          stock: 10,
+          image_url:
+            "https://m.media-amazon.com/images/I/81vpsIs58WL._SL1500_.jpg",
+        },
+        {
+          id: 3,
+          name: "Eggs 6 pack",
+          price: 60,
+          sustainability: 0.9,
+          stock: 8,
+          image_url:
+            "https://m.media-amazon.com/images/I/71l2rGvQpRL._SL1500_.jpg",
+        },
+        {
+          id: 4,
+          name: "Milk 1L",
+          price: 45,
+          sustainability: 0.92,
+          stock: 12,
+          image_url:
+            "https://m.media-amazon.com/images/I/71p1Gje1lXL._SL1500_.jpg",
+        },
+        {
+          id: 5,
+          name: "Butter 100g",
+          price: 40,
+          sustainability: 0.93,
+          stock: 5,
+          image_url:
+            "https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg",
+        },
+        {
+          id: 6,
+          name: "Organic Onions 1kg",
+          price: 40,
+          sustainability: 0.98,
+          stock: 17,
+          image_url:
+            "https://m.media-amazon.com/images/I/81vpsIs58WL._SL1500_.jpg",
+        },
+      ];
+
+      function addToCart(productId) {
+        const product = products.find((p) => p.id === productId);
+        alert(`Added to cart: ${product.name}`);
+      }
+
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = products
+        .map(
+          (product) => `
+      <div class="product-card">
+        <img src="${product.image_url}" alt="${product.name}" class="product-image" />
+        <div class="product-info">
+          <h3 class="product-name">${product.name}</h3>
+          <div class="product-meta">
+            <span class="product-price">₹${product.price}</span>
+            <span class="sustainability-badge">🌱 ${product.sustainability}</span>
+          </div>
+          <div class="product-stock">Stock: ${product.stock}</div>
+          <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+        </div>
+      </div>
+    `
+        )
+        .join("");
+    </script>
+  </body>
+</html>
