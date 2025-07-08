@@ -112,95 +112,95 @@ INSERT INTO products (product_id, name, category, image_url, recyclability_index
 
 
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(28, 'Organic Eggs 12 pieces', 'eggs', 'https://m.media-amazon.com/images/I/81XWPS5jAM-L._SL1500_.jpg', 0.95, 0.6, '{"length_cm": 20, "width_cm": 15, "height_cm": 8}', 0.0, 60.0),
-(29, 'Free Range Eggs 12 pieces', 'eggs', 'https://m.media-amazon.com/images/I/71f5HGJXZzL._SL1500_.jpg', 0.90, 0.6, '{"length_cm": 20, "width_cm": 15, "height_cm": 8}', 0.0, 45.0),
-(30, 'Organic Milk 1L', 'milk', 'https://m.media-amazon.com/images/I/71Z-NVo0MZL._SL1500_.jpg', 0.88, 1.0, '{"length_cm": 10, "width_cm": 6, "height_cm": 18}', 0.0, 75.0),
-(31, 'Toned Milk 1L', 'milk', 'https://m.media-amazon.com/images/I/71NEX0WZdIL._SL1500_.jpg', 0.85, 1.0, '{"length_cm": 10, "width_cm": 6, "height_cm": 18}', 0.0, 55.0),
-(32, 'Organic Butter 200g', 'butter', 'https://m.media-amazon.com/images/I/61he4RQkByL._SL1500_.jpg', 0.82, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 120.0),
-(33, 'Regular Butter 200g', 'butter', 'https://m.media-amazon.com/images/I/81ztZ9fXVdL._SL1500_.jpg', 0.78, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 95.0);
+(28, 'Organic Eggs 12 pieces', 'eggs', '/images\organic_eggs.jpeg', 0.95, 0.6, '{"length_cm": 20, "width_cm": 15, "height_cm": 8}', 0.0, 60.0),
+(29, 'Free Range Eggs 12 pieces', 'eggs', '/images\freerange_eggs.jpeg', 0.90, 0.6, '{"length_cm": 20, "width_cm": 15, "height_cm": 8}', 0.0, 45.0),
+(30, 'Organic Milk 1L', 'milk', '/images\organic_milk.jpeg', 0.88, 1.0, '{"length_cm": 10, "width_cm": 6, "height_cm": 18}', 0.0, 75.0),
+(31, 'Toned Milk 1L', 'milk', '/images\toned_milk.jpeg', 0.85, 1.0, '{"length_cm": 10, "width_cm": 6, "height_cm": 18}', 0.0, 55.0),
+(32, 'Organic Butter 200g', 'butter', '/images\organic_butter.jpeg', 0.82, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 120.0),
+(33, 'Regular Butter 200g', 'butter', '/images\regular_butter.jpeg', 0.78, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 95.0);
 
 
 -- Cooking Oils
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(34, 'Organic Coconut Oil 500ml', 'oil', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
-(35, 'Refined Sunflower Oil 1L', 'oil', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.85, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 120.0),
-(36, 'Extra Virgin Olive Oil 500ml', 'oil', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 250.0),
-(37, 'Mustard Oil 500ml', 'oil', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.87, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 85.0);
+(34, 'Organic Coconut Oil 500ml', 'oil', '/images\organic_coconut_oil.jpeg', 0.90, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
+(35, 'Refined Sunflower Oil 1L', 'oil', '/images\refined_sunflower_oil.jpeg', 0.85, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 120.0),
+(36, 'Extra Virgin Olive Oil 500ml', 'oil', '/images\extravirgin_olive_oil.jpeg', 0.88, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 250.0),
+(37, 'Mustard Oil 500ml', 'oil', '/images\mustard_oil.jpg', 0.87, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 85.0);
 
 -- Spices and Seasonings
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(38, 'Organic Black Pepper 50g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.92, 0.05, '{"length_cm": 8, "width_cm": 4, "height_cm": 12}', 0.0, 45.0),
-(39, 'Cumin Seeds 100g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 35.0),
-(40, 'Turmeric Powder 100g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 25.0),
-(41, 'Red Chili Powder 100g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.87, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 30.0),
-(42, 'Garam Masala 50g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.89, 0.05, '{"length_cm": 8, "width_cm": 4, "height_cm": 12}', 0.0, 40.0),
-(43, 'Coriander Powder 100g', 'spice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.86, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 28.0);
+(38, 'Organic Black Pepper 50g', 'spice', '/images\organic_black_pepper.jpeg', 0.92, 0.05, '{"length_cm": 8, "width_cm": 4, "height_cm": 12}', 0.0, 45.0),
+(39, 'Cumin Seeds 100g', 'spice', '/images\cumin_seeds.jpeg', 0.90, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 35.0),
+(40, 'Turmeric Powder 100g', 'spice', '/images\turmeric_powder.jpeg', 0.88, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 25.0),
+(41, 'Red Chili Powder 100g', 'spice', '/images\redchilli_powder.jpeg', 0.87, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 30.0),
+(42, 'Garam Masala 50g', 'spice', '/images\garam_masala.jpeg', 0.89, 0.05, '{"length_cm": 8, "width_cm": 4, "height_cm": 12}', 0.0, 40.0),
+(43, 'Coriander Powder 100g', 'spice', '/images\coriander_powder.jpeg', 0.86, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 15}', 0.0, 28.0);
 
 -- Vegetables
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(44, 'Organic Onions 1kg', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.98, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 40.0),
-(45, 'Fresh Tomatoes 1kg', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.97, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 35.0),
-(46, 'Organic Carrots 500g', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.96, 0.5, '{"length_cm": 15, "width_cm": 10, "height_cm": 8}', 0.0, 30.0),
-(47, 'Fresh Garlic 250g', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.95, 0.25, '{"length_cm": 12, "width_cm": 8, "height_cm": 6}', 0.0, 25.0),
-(48, 'Organic Ginger 200g', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.94, 0.2, '{"length_cm": 10, "width_cm": 6, "height_cm": 5}', 0.0, 35.0),
-(49, 'Fresh Green Chilies 100g', 'vegetable', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.93, 0.1, '{"length_cm": 8, "width_cm": 4, "height_cm": 4}', 0.0, 15.0);
+(44, 'Organic Onions 1kg', 'vegetable', '/images\organic_onions.jpeg', 0.98, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 40.0),
+(45, 'Fresh Tomatoes 1kg', 'vegetable', '/images\fresh_tomatoes.jpeg', 0.97, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 35.0),
+(46, 'Organic Carrots 500g', 'vegetable', '/images\organic_carrots.jpeg', 0.96, 0.5, '{"length_cm": 15, "width_cm": 10, "height_cm": 8}', 0.0, 30.0),
+(47, 'Fresh Garlic 250g', 'vegetable', '/images\fresh_garlic.jpeg', 0.95, 0.25, '{"length_cm": 12, "width_cm": 8, "height_cm": 6}', 0.0, 25.0),
+(48, 'Organic Ginger 200g', 'vegetable', '/images\organic_ginger.jpeg', 0.94, 0.2, '{"length_cm": 10, "width_cm": 6, "height_cm": 5}', 0.0, 35.0),
+(49, 'Fresh Green Chilies 100g', 'vegetable', '/images\fresh_chillies.jpeg', 0.93, 0.1, '{"length_cm": 8, "width_cm": 4, "height_cm": 4}', 0.0, 15.0);
 
 -- Fruits
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(50, 'Organic Bananas 1kg', 'fruit', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.99, 1.0, '{"length_cm": 25, "width_cm": 15, "height_cm": 8}', 0.0, 45.0),
-(51, 'Fresh Apples 1kg', 'fruit', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.98, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 120.0),
-(52, 'Organic Oranges 1kg', 'fruit', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.97, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 80.0),
-(53, 'Fresh Mangoes 1kg', 'fruit', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.96, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 90.0);
+(50, 'Organic Bananas 1kg', 'fruit', '/images\bananas.jpeg', 0.99, 1.0, '{"length_cm": 25, "width_cm": 15, "height_cm": 8}', 0.0, 45.0),
+(51, 'Fresh Apples 1kg', 'fruit', '/images\apples.jpeg', 0.98, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 120.0),
+(52, 'Organic Oranges 1kg', 'fruit', '/images\oranges.jpeg', 0.97, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 80.0),
+(53, 'Fresh Mangoes 1kg', 'fruit', '/images\mangoes.jpeg', 0.96, 1.0, '{"length_cm": 20, "width_cm": 15, "height_cm": 10}', 0.0, 90.0);
 
 -- Grains and Pulses
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(54, 'Organic Basmati Rice 1kg', 'rice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.95, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 85.0),
-(55, 'Regular Basmati Rice 1kg', 'rice', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 65.0),
-(56, 'Organic Toor Dal 500g', 'pulse', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.93, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 55.0),
-(57, 'Moong Dal 500g', 'pulse', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.91, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 45.0),
-(58, 'Organic Chana Dal 500g', 'pulse', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.92, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 50.0);
+(54, 'Organic Basmati Rice 1kg', 'rice', '/images\organic_basmati.jpeg', 0.95, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 85.0),
+(55, 'Regular Basmati Rice 1kg', 'rice', '/images\regular_basmati.jpeg', 0.90, 1.0, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 65.0),
+(56, 'Organic Toor Dal 500g', 'pulse', '/images\organic_toor_dal.jpeg', 0.93, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 55.0),
+(57, 'Moong Dal 500g', 'pulse', '/images\moong_dal.jpeg', 0.91, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 45.0),
+(58, 'Organic Chana Dal 500g', 'pulse', '/images\channa_dal.jpeg', 0.92, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 50.0);
 
 -- Dairy Products
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(59, 'Organic Curd 500g', 'dairy', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.85, 0.5, '{"length_cm": 10, "width_cm": 6, "height_cm": 8}', 0.0, 45.0),
-(60, 'Paneer 200g', 'dairy', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.80, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 60.0),
-(61, 'Organic Cheese 200g', 'dairy', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.78, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 95.0);
+(59, 'Organic Curd 500g', 'dairy', '/images\organic_curd.jpeg', 0.85, 0.5, '{"length_cm": 10, "width_cm": 6, "height_cm": 8}', 0.0, 45.0),
+(60, 'Paneer 200g', 'dairy', '/images\paneer.jpeg', 0.80, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 60.0),
+(61, 'Organic Cheese 200g', 'dairy', '/images\organic_cheese.jpeg', 0.78, 0.2, '{"length_cm": 12, "width_cm": 8, "height_cm": 4}', 0.0, 95.0);
 
 -- Beverages
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(62, 'Organic Green Tea 50 bags', 'tea', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.1, '{"length_cm": 15, "width_cm": 8, "height_cm": 12}', 0.0, 120.0),
-(63, 'Assam Black Tea 100 bags', 'tea', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.2, '{"length_cm": 18, "width_cm": 10, "height_cm": 15}', 0.0, 85.0),
-(64, 'Organic Coffee Beans 250g', 'coffee', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.92, 0.25, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
-(65, 'Instant Coffee 100g', 'coffee', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.85, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 95.0);
+(62, 'Organic Green Tea 50 bags', 'tea', '/images\organic_green_tea.jpeg', 0.90, 0.1, '{"length_cm": 15, "width_cm": 8, "height_cm": 12}', 0.0, 120.0),
+(63, 'Assam Black Tea 100 bags', 'tea', '/images\assam_black_tea.jpeg', 0.88, 0.2, '{"length_cm": 18, "width_cm": 10, "height_cm": 15}', 0.0, 85.0),
+(64, 'Organic Coffee Beans 250g', 'coffee', '/images\organic_coffee_beans.jpeg', 0.92, 0.25, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
+(65, 'Instant Coffee 100g', 'coffee', '/images\instant_coffee.jpeg', 0.85, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 95.0);
 
 -- Snacks
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(66, 'Organic Mixed Nuts 200g', 'snacks', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.2, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 150.0),
-(67, 'Roasted Almonds 100g', 'snacks', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 85.0),
-(68, 'Organic Popcorn Kernels 500g', 'snacks', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.95, 0.5, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 65.0);
+(66, 'Organic Mixed Nuts 200g', 'snacks', '/images\organic_mixed_nuts.jpeg', 0.88, 0.2, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 150.0),
+(67, 'Roasted Almonds 100g', 'snacks', '/images\roasted_almonds.jpeg', 0.90, 0.1, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 85.0),
+(68, 'Organic Popcorn Kernels 500g', 'snacks', '/images\organic_popcorn.jpeg', 0.95, 0.5, '{"length_cm": 15, "width_cm": 8, "height_cm": 20}', 0.0, 65.0);
 
 -- Condiments and Sauces
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(69, 'Organic Honey 500g', 'condiment', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.92, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
-(70, 'Tomato Ketchup 500ml', 'sauce', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.85, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 75.0),
-(71, 'Soy Sauce 250ml', 'sauce', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.87, 0.25, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 65.0),
-(72, 'Organic Maple Syrup 250ml', 'condiment', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.25, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 220.0);
+(69, 'Organic Honey 500g', 'condiment', '/images\organic_honey.jpeg', 0.92, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 180.0),
+(70, 'Tomato Ketchup 500ml', 'sauce', '/images\tomato_ketchup.jpeg', 0.85, 0.5, '{"length_cm": 12, "width_cm": 6, "height_cm": 15}', 0.0, 75.0),
+(71, 'Soy Sauce 250ml', 'sauce', '/images\organic_soy_sauce.jpeg', 0.87, 0.25, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 65.0),
+(72, 'Organic Maple Syrup 250ml', 'condiment', '/images\organic_maple_syrup.jpeg', 0.90, 0.25, '{"length_cm": 10, "width_cm": 5, "height_cm": 12}', 0.0, 220.0);
 
 -- Clothing and Accessories
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(73, 'Organic Cotton T-Shirt Blue', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.95, 0.2, '{"length_cm": 25, "width_cm": 20, "height_cm": 2}', 0.0, 450.0),
-(74, 'Eco-Friendly Jeans Black', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.4, '{"length_cm": 30, "width_cm": 25, "height_cm": 3}', 0.0, 850.0),
-(75, 'Sustainable Trousers Gray', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.35, '{"length_cm": 28, "width_cm": 24, "height_cm": 2}', 0.0, 650.0),
-(76, 'Organic Cotton Shirt White', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.92, 0.25, '{"length_cm": 26, "width_cm": 22, "height_cm": 2}', 0.0, 550.0),
-(77, 'Recycled Polyester Jacket', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.85, 0.6, '{"length_cm": 32, "width_cm": 28, "height_cm": 4}', 0.0, 1200.0),
-(78, 'Bamboo Socks Pack', 'clothing', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.94, 0.1, '{"length_cm": 15, "width_cm": 10, "height_cm": 1}', 0.0, 180.0);
+(73, 'Organic Cotton T-Shirt Blue', 'clothing', '/images\organic_tshirt_blue.jpeg', 0.95, 0.2, '{"length_cm": 25, "width_cm": 20, "height_cm": 2}', 0.0, 450.0),
+(74, 'Eco-Friendly Jeans Black', 'clothing', '/images\black_jeans.jpeg', 0.88, 0.4, '{"length_cm": 30, "width_cm": 25, "height_cm": 3}', 0.0, 850.0),
+(75, 'Sustainable Trousers Gray', 'clothing', '/images\gray_trousers.jpeg', 0.90, 0.35, '{"length_cm": 28, "width_cm": 24, "height_cm": 2}', 0.0, 650.0),
+(76, 'Organic Cotton Shirt White', 'clothing', '/images\white_shirt.jpeg', 0.92, 0.25, '{"length_cm": 26, "width_cm": 22, "height_cm": 2}', 0.0, 550.0),
+(77, 'Recycled Polyester Jacket', 'clothing', '/images\recycled_jacket.jpeg', 0.85, 0.6, '{"length_cm": 32, "width_cm": 28, "height_cm": 4}', 0.0, 1200.0),
+(78, 'Bamboo Socks Pack', 'clothing', '/images\bamboo_socks.jpeg', 0.94, 0.1, '{"length_cm": 15, "width_cm": 10, "height_cm": 1}', 0.0, 180.0);
 
 -- Personal Care and Wellness
 INSERT INTO products (product_id, name, category, image_url, recyclability_index, weight, dimensions, current_score, price) VALUES
-(79, 'Organic Face Cream', 'personal_care', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.88, 0.1, '{"length_cm": 8, "width_cm": 4, "height_cm": 6}', 0.0, 280.0),
-(80, 'Natural Shampoo Bar', 'personal_care', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.96, 0.08, '{"length_cm": 6, "width_cm": 4, "height_cm": 2}', 0.0, 120.0),
-(81, 'Bamboo Toothbrush', 'personal_care', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.98, 0.05, '{"length_cm": 18, "width_cm": 1, "height_cm": 1}', 0.0, 85.0),
-(82, 'Organic Deodorant', 'personal_care', 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._SL1500_.jpg', 0.90, 0.08, '{"length_cm": 6, "width_cm": 3, "height_cm": 3}', 0.0, 150.0);
+(79, 'Organic Face Cream', 'personal_care', '/images\organic_face_cream.jpeg', 0.88, 0.1, '{"length_cm": 8, "width_cm": 4, "height_cm": 6}', 0.0, 280.0),
+(80, 'Natural Shampoo Bar', 'personal_care', '/images\natural_shampoo_bar.jpeg', 0.96, 0.08, '{"length_cm": 6, "width_cm": 4, "height_cm": 2}', 0.0, 120.0),
+(81, 'Bamboo Toothbrush', 'personal_care', '/images\bamboo_toothbrush.jpeg', 0.98, 0.05, '{"length_cm": 18, "width_cm": 1, "height_cm": 1}', 0.0, 85.0),
+(82, 'Organic Deodorant', 'personal_care', '/images\organic_deodrant.jpeg', 0.90, 0.08, '{"length_cm": 6, "width_cm": 3, "height_cm": 3}', 0.0, 150.0);
 
 -- ========================
 -- 6. Supplier Inventory (Previously warehouse_inventory)

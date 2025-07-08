@@ -131,12 +131,13 @@ function ReorderPage({ product, manager, onOrderPlaced, onCancel }) {
 
       <div className="reorder-buttons">
         <button onClick={handleOrder} disabled={loading}>
-          {loading ? 'Placing Order...' : '✅ Place Order'}
+          {loading ? 'Placing Order...' : 'Place Order'}
         </button>
         <button onClick={onCancel} className="cancel-btn">
-          ❌ Cancel
+          Cancel
         </button>
       </div>
+
     </div>
   );
 }
