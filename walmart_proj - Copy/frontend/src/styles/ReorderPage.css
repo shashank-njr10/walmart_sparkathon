@@ -1,5 +1,5 @@
 .reorder-container {
-  max-width: 550px;
+  max-width: 1300px; /* Wider container */
   margin: 30px auto;
   padding: 30px 24px;
   background: #f8fef9;
@@ -7,6 +7,25 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #1a1a1a;
+}
+
+/* Flex wrapper for form and suggestions */
+.reorder-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.reorder-form {
+  flex: 1;
+  min-width: 400px;
+}
+
+.reorder-suggestions {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .reorder-container h2 {
@@ -52,6 +71,23 @@
   outline: none;
   border-color: #45a06e;
   box-shadow: 0 0 0 2px rgba(67, 160, 71, 0.2);
+}
+
+.form-group button {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.form-group button:hover {
+  background: linear-gradient(to right, #5ca860, #388e3c);
 }
 
 .reorder-buttons {
@@ -103,8 +139,50 @@
   padding-left: 4px;
 }
 
-/* Add subtle input icon spacing if you use icons inside labels */
 .form-group label svg {
   margin-right: 4px;
   vertical-align: middle;
 }
+
+/* Suggestion Card */
+.suggestion-card {
+  flex: 0 1 calc(45% - 10px);
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #e9f9ef;
+  border: 2px solid #c8e6c9;
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
+}
+
+.suggestion-card.highlight {
+  border: 2px solid #4caf50;
+  background-color: #dbf9e3;
+}
+
+.best-label {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #2e7d32;
+  font-size: 15px;
+}
+
+@media (max-width: 1024px) {
+  .reorder-layout {
+    flex-direction: column;
+  }
+
+  .reorder-suggestions {
+    flex-direction: row;
+  }
+
+  .suggestion-card {
+    flex: 1 1 100%;
+  }
+} 

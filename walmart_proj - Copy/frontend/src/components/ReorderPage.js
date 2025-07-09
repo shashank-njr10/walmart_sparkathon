@@ -12,7 +12,6 @@ function ReorderPage({ product, manager, onOrderPlaced, onCancel }) {
   const [suggestions, setSuggestions] = useState([]);
   const [suggestionLoading, setSuggestionLoading] = useState(false);
 
-  // Fetch suppliers and transport modes once
   useEffect(() => {
     const fetchOptions = async () => {
       try {
@@ -111,85 +110,89 @@ function ReorderPage({ product, manager, onOrderPlaced, onCancel }) {
       <h2>🚚 Reorder Product</h2>
       <p><strong>Product:</strong> {product.name}</p>
 
-      <div className="form-group">
-        <label>📦 Select Supplier</label>
-        <select
-          value={supplierId}
-          onChange={e => setSupplierId(e.target.value)}
-          className="reorder-select"
-        >
-          <option value="">-- Select Supplier --</option>
-          {suppliers.map(s => (
-            <option key={s.supplier_id} value={s.supplier_id}>
-              {s.name} ({s.current_stock} in stock)
-            </option>
-          ))}
-        </select>
-        {suppliers.length === 0 && <p className="no-options">No suppliers available for this product.</p>}
-      </div>
-
-      <div className="form-group">
-        <label>🔢 Quantity</label>
-        <input
-          type="number"
-          min="1"
-          value={quantity}
-          onChange={e => setQuantity(e.target.value)}
-          className="reorder-input"
-        />
-      </div>
-
-      <div className="form-group">
-        <button onClick={handleFetchSuggestions} disabled={!supplierId || quantity < 1}>
-          🔍 Get Suggestions
-        </button>
-      </div>
-
-      {suggestionLoading && <p>Loading suggestions...</p>}
-
-      <div className="form-group">
-        <label>🚛 Transport Mode</label>
-        <select
-          value={transportMode}
-          onChange={e => setTransportMode(e.target.value)}
-          className="reorder-select"
-        >
-          <option value="">-- Select Mode --</option>
-          {transportModes.map(t => (
-            <option key={t.mode_type} value={t.mode_type}>
-              {t.mode_type} (Multiplier: {t.sustainability_multiplier})
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {suggestions?.modes?.length > 0 && (
-        <div className="suggestions-section">
-          {suggestions.modes.map((s, idx) => (
-            <div
-              key={idx}
-              className={`suggestion-card ${s.is_best ? 'highlight' : ''}`}
-              onClick={() => setTransportMode(s.mode)}
-              style={{ cursor: 'pointer' }}
+      <div className="reorder-layout">
+        {/* Left: Form */}
+        <div className="reorder-form">
+          <div className="form-group">
+            <label>📦 Select Supplier</label>
+            <select
+              value={supplierId}
+              onChange={e => setSupplierId(e.target.value)}
+              className="reorder-select"
             >
-              <p><strong>Mode:</strong> {s.mode}</p>
-              <p><strong>Cost:</strong> ₹{s.estimated_cost}</p>
-              <p><strong>Distance:</strong> {s.distance_km} km</p>
-              <p><strong>Sustainability Score:</strong> {s.sustainability_score}</p>
-              {s.is_best && <p className="best-label">🌱 Best Option</p>}
-            </div>
-          ))}
+              <option value="">-- Select Supplier --</option>
+              {suppliers.map(s => (
+                <option key={s.supplier_id} value={s.supplier_id}>
+                  {s.name} ({s.current_stock} in stock)
+                </option>
+              ))}
+            </select>
+            {suppliers.length === 0 && <p className="no-options">No suppliers available for this product.</p>}
+          </div>
+
+          <div className="form-group">
+            <label>🔢 Quantity</label>
+            <input
+              type="number"
+              min="1"
+              value={quantity}
+              onChange={e => setQuantity(e.target.value)}
+              className="reorder-input"
+            />
+          </div>
+
+          <div className="form-group">
+            <button onClick={handleFetchSuggestions} disabled={!supplierId || quantity < 1}>
+              🌿 Get Suggestions
+            </button>
+          </div>
+
+          <div className="form-group">
+            <label>🚛 Transport Mode</label>
+            <select
+              value={transportMode}
+              onChange={e => setTransportMode(e.target.value)}
+              className="reorder-select"
+            >
+              <option value="">-- Select Mode --</option>
+              {transportModes.map(t => (
+                <option key={t.mode_type} value={t.mode_type}>
+                  {t.mode_type} (Multiplier: {t.sustainability_multiplier})
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="reorder-buttons">
+            <button onClick={handleOrder} disabled={loading}>
+              {loading ? 'Placing Order...' : '✅ Place Order'}
+            </button>
+            <button onClick={onCancel} className="cancel-btn">
+              ❌ Cancel
+            </button>
+          </div>
         </div>
-      )}
 
+        {/* Right: Suggestions */}
+        {suggestionLoading && <p>Loading suggestions...</p>}
 
-      <div className="reorder-buttons">
-        <button onClick={handleOrder} disabled={loading}>
-          {loading ? 'Placing Order...' : '✅ Place Order'}
-        </button>
-        <button onClick={onCancel} className="cancel-btn">
-          ❌ Cancel
-        </button>
+        {suggestions?.modes?.length > 0 && (
+          <div className="reorder-suggestions">
+            {suggestions.modes.map((s, idx) => (
+              <div
+                key={idx}
+                className={`suggestion-card ${s.is_best ? 'highlight' : ''}`}
+                onClick={() => setTransportMode(s.mode)}
+              >
+                <p><strong>Mode:</strong> {s.mode}</p>
+                <p><strong>Cost:</strong> ₹{s.estimated_cost}</p>
+                <p><strong>Distance:</strong> {s.distance_km} km</p>
+                <p><strong>Sustainability Score:</strong> {s.sustainability_score}</p>
+                {s.is_best && <p className="best-label">🌱 Best Option</p>}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

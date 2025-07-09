@@ -1,5 +1,5 @@
 @echo off
-set PGPASSWORD=test@123
+set PGPASSWORD=srilakshmi24
 
 echo 📦 Creating tables...
 psql -U postgres -h localhost -d supplydb -f schema.sql
