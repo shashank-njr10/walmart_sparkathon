@@ -32,7 +32,7 @@ const warehouseRoutes = require("./routes/warehouseRoutes");
 const transportRoutes = require("./routes/transportRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const distanceRoutes = require("./routes/distanceRoutes");
-
+const suggestRoutes = require("./routes/suggestRoutes");
 // ✅ Use routes
 app.use("/login", loginRoutes);
 app.use("/alerts", alertRoutes);
@@ -41,6 +41,7 @@ app.use("/warehouses", warehouseRoutes);
 app.use("/transport-modes", transportRoutes);
 app.use("/order", orderRoutes);
 app.use("/distance", distanceRoutes);
+app.use("/suggest", suggestRoutes);
 
 // ✅ Start server
 const PORT = process.env.PORT || 3000;
