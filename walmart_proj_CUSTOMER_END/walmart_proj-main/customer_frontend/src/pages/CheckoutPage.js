@@ -229,6 +229,7 @@ function CheckoutPage({ cart, customer, onBack, setPage }) {
               background: "#fafafa",
               borderRadius: 12,
               boxShadow: "0 2px 8px #e0f2f1",
+              marginBottom: 0,
             }}
           >
             <thead>
@@ -271,27 +272,7 @@ function CheckoutPage({ cart, customer, onBack, setPage }) {
                     padding: 12,
                   }}
                 >
-                  Closest Warehouse
-                </th>
-                <th
-                  style={{
-                    fontWeight: 700,
-                    color: "#2e7d32",
-                    fontSize: 16,
-                    padding: 12,
-                  }}
-                >
-                  Distance (km)
-                </th>
-                <th
-                  style={{
-                    fontWeight: 700,
-                    color: "#2e7d32",
-                    fontSize: 16,
-                    padding: 12,
-                  }}
-                >
-                  Vehicle
+                  Warehouse / Distance / Vehicle
                 </th>
               </tr>
             </thead>
@@ -313,105 +294,136 @@ function CheckoutPage({ cart, customer, onBack, setPage }) {
                     </td>
                     <td style={{ padding: 12 }}>{item.quantity}</td>
                     <td style={{ padding: 12 }}>₹{item.price}</td>
-                    <td style={{ padding: 12 }}>
-                      {delivery?.warehouse || "-"}
+                    <td style={{ padding: 12, minWidth: 180 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 2,
+                        }}
+                      >
+                        <span>
+                          <b>Warehouse:</b> {delivery?.warehouse || "-"}
+                        </span>
+                        <span>
+                          <b>Distance:</b>{" "}
+                          {delivery?.distance_km
+                            ? `${delivery.distance_km} km`
+                            : "-"}
+                        </span>
+                        <span>
+                          <b>Vehicle:</b> {delivery?.vehicle || "-"}
+                        </span>
+                      </div>
                     </td>
-                    <td style={{ padding: 12 }}>
-                      {delivery?.distance_km || "-"}
-                    </td>
-                    <td style={{ padding: 12 }}>{delivery?.vehicle || "-"}</td>
                   </tr>
                 );
               })}
-              {deliveryInfo && (
-                <tr style={{ background: "#f1f8e9" }}>
-                  <td
-                    colSpan={4}
-                    style={{ textAlign: "right", padding: 12, fontWeight: 600 }}
-                  >
-                    Delivery Cost
-                  </td>
-                  <td
-                    style={{ padding: 12, fontWeight: 600, color: "#1565c0" }}
-                  >
-                    {/* Group by warehouse and sum unique delivery costs */}
-                    {(() => {
-                      const warehouseCostMap = {};
-                      deliveryInfo.delivery.forEach((d) => {
-                        if (d.warehouse && d.delivery_cost) {
-                          warehouseCostMap[d.warehouse] = parseFloat(
-                            d.delivery_cost
-                          );
-                        }
-                      });
-                      const totalUniqueDeliveryCost = Object.values(
-                        warehouseCostMap
-                      ).reduce((a, b) => a + b, 0);
-                      return (
-                        <>
-                          ₹{totalUniqueDeliveryCost.toFixed(2)}
-                          <br />
-                          <span style={{ fontSize: 12, color: "#757575" }}>
-                            {Object.entries(warehouseCostMap)
-                              .map(
-                                ([warehouse, cost], i) =>
-                                  `Warehouse: ${warehouse} (Delivery: ₹${cost})`
-                              )
-                              .join(", ")}
-                          </span>
-                        </>
-                      );
-                    })()}
-                  </td>
-                </tr>
-              )}
-              <tr style={{ background: "#e3f2fd" }}>
-                <td
-                  colSpan={4}
-                  style={{
-                    textAlign: "right",
-                    padding: 12,
-                    fontWeight: 700,
-                    fontSize: 17,
-                  }}
-                >
-                  Total
-                </td>
-                <td
-                  style={{
-                    padding: 12,
-                    fontWeight: 700,
-                    fontSize: 17,
-                    color: "#2e7d32",
-                  }}
-                >
-                  ₹
-                  {(() => {
-                    let deliveryCost = 0;
-                    if (deliveryInfo) {
-                      const warehouseCostMap = {};
-                      deliveryInfo.delivery.forEach((d) => {
-                        if (d.warehouse && d.delivery_cost) {
-                          warehouseCostMap[d.warehouse] = parseFloat(
-                            d.delivery_cost
-                          );
-                        }
-                      });
-                      deliveryCost = Object.values(warehouseCostMap).reduce(
-                        (a, b) => a + b,
-                        0
-                      );
-                    }
-                    return (subtotal + deliveryCost).toFixed(2);
-                  })()}
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
+        {/* Summary Section */}
         <div
           style={{
-            marginTop: 32,
+            background: "#f8fbe9",
+            border: "1px solid #e0e0e0",
+            borderRadius: 10,
+            marginTop: 0,
+            marginBottom: 24,
+            padding: 24,
+            maxWidth: 500,
+            marginLeft: "auto",
+            marginRight: "auto",
+            boxShadow: "0 2px 8px #e0f2f1",
+          }}
+        >
+          {deliveryInfo && (
+            <div style={{ marginBottom: 12 }}>
+              <div
+                style={{
+                  fontWeight: 600,
+                  color: "#1565c0",
+                  fontSize: 18,
+                  marginBottom: 4,
+                }}
+              >
+                Delivery Cost: ₹
+                {(() => {
+                  const warehouseCostMap = {};
+                  deliveryInfo.delivery.forEach((d) => {
+                    if (d.warehouse && d.delivery_cost) {
+                      warehouseCostMap[d.warehouse] = parseFloat(
+                        d.delivery_cost
+                      );
+                    }
+                  });
+                  const totalUniqueDeliveryCost = Object.values(
+                    warehouseCostMap
+                  ).reduce((a, b) => a + b, 0);
+                  return totalUniqueDeliveryCost.toFixed(2);
+                })()}
+              </div>
+              <div style={{ fontSize: 13, color: "#757575", marginLeft: 8 }}>
+                {(() => {
+                  const warehouseCostMap = {};
+                  deliveryInfo.delivery.forEach((d) => {
+                    if (d.warehouse && d.delivery_cost) {
+                      warehouseCostMap[d.warehouse] = parseFloat(
+                        d.delivery_cost
+                      );
+                    }
+                  });
+                  return Object.entries(warehouseCostMap).map(
+                    ([warehouse, cost], i) => (
+                      <div key={warehouse} style={{ marginBottom: 2 }}>
+                        <b>{warehouse}</b>: Delivery ₹{cost}
+                      </div>
+                    )
+                  );
+                })()}
+              </div>
+            </div>
+          )}
+          <div
+            style={{
+              background: "#e3f2fd",
+              borderRadius: 6,
+              padding: "10px 18px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontWeight: 700,
+              fontSize: 18,
+              color: "#2e7d32",
+            }}
+          >
+            <span>Total</span>
+            <span>
+              ₹
+              {(() => {
+                let deliveryCost = 0;
+                if (deliveryInfo) {
+                  const warehouseCostMap = {};
+                  deliveryInfo.delivery.forEach((d) => {
+                    if (d.warehouse && d.delivery_cost) {
+                      warehouseCostMap[d.warehouse] = parseFloat(
+                        d.delivery_cost
+                      );
+                    }
+                  });
+                  deliveryCost = Object.values(warehouseCostMap).reduce(
+                    (a, b) => a + b,
+                    0
+                  );
+                }
+                return (subtotal + deliveryCost).toFixed(2);
+              })()}
+            </span>
+          </div>
+        </div>
+        <div
+          style={{
+            marginTop: 16,
             display: "flex",
             justifyContent: "center",
             gap: 16,

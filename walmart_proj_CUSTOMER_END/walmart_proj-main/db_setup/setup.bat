@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set PGPASSWORD=srilakshmi24
+set PGPASSWORD=sarvesh12
 
 echo 📦 Creating tables...
 cmd /C ""C:\Program Files\PostgreSQL\17\bin\psql.exe" -U postgres -h localhost -d supplydb -f schema.sql"
